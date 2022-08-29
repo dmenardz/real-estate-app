@@ -8,7 +8,7 @@ import { filterData, getFilterValues } from '../utils/filterData';
 import { baseUrl, fetchApi } from '../utils/fetchApi';
 import noresult from '../assets/images/noresult.svg';
 
-const SearchFilters = () =>{
+export default function SearchFilters() {
   const [filters] = useState(filterData);
   const [searchTerm, setSearchTerm] = useState('');
   const [locationData, setLocationData] = useState();
@@ -100,7 +100,7 @@ const SearchFilters = () =>{
                 ))}
                 {!loading && !locationData?.length && (
                   <Flex justifyContent='center' alignItems='center' flexDir='column' marginTop='5' marginBottom='5' >
-                    <Image src={noresult} alt = 'noresult'/>
+                    <Image src={noresult} />
                     <Text fontSize='xl' marginTop='3'>
                       Waiting to search!
                     </Text>
@@ -114,4 +114,3 @@ const SearchFilters = () =>{
     </Flex>
   );
 }
- export default SearchFilters;

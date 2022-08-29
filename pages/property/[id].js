@@ -45,11 +45,11 @@ const PropertyDetails = ({ propertyDetails: { price, rentFrequency, rooms, title
       )}
     </Flex>
     <Box>
-      {amenities.length && <Text fontSize='2xl' fontWeight='black' marginTop='5'>Amenities:</Text>}
+      {amenities.length && <Text fontSize='2xl' fontWeight='black' marginTop='5'>Facilites:</Text>}
         <Flex flexWrap='wrap'>
           {amenities?.map((item) => (
               item?.amenities?.map((amenity) => (
-                <Text key={amenity.text} fontWeight='400' color='white' fontSize='l' p='2' bg='green.500' m='1' borderRadius='5'>
+                <Text key={amenity.text} fontWeight='bold' color='blue.400' fontSize='l' p='2' bg='gray.200' m='1' borderRadius='5'>
                   {amenity.text}
                 </Text>
               ))
@@ -69,4 +69,4 @@ export async function getServerSideProps({ params: { id } }) {
       propertyDetails: data,
     },
   };
-}  
+}
